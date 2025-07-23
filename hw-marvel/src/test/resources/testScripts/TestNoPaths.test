@@ -1,0 +1,16 @@
+# Simple test to see what happens when there is no path
+# between any of the existing characters
+
+LoadGraph g noPaths.csv
+
+ListChildren g A
+ListChildren g B
+ListChildren g C
+
+FindPath g A B
+FindPath g B A
+FindPath g B C
+FindPath g C B
+FindPath g C A
+
+ListNodes g

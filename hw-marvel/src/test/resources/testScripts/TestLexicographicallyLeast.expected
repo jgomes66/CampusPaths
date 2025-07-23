@@ -1,0 +1,8 @@
+# Simple test to ensure that the lexicographically least
+# path is returned when there are multiple shortest paths
+
+loaded graph g
+
+path from A to C:
+A to B via BookA
+B to C via BookB

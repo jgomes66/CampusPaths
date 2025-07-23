@@ -1,0 +1,22 @@
+## CSE 331 hw-setup Questions
+## Part 6
+
+1. Why did Fibonacci fail the testThrowsIllegalArgumentException< test? What (if anything) did
+you have to do to fix it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed the testThrowsIllegalArgumentException test because the orignal code throws an ThrowsIllegalArgumentException if
+n <= 0. This is incorrect because in the Fibonacci sequence, the first number is in fact 0. Therefore, we should not throw an IllegalArgumentException because 0 is a valid number, so I had to change n <= 0 to n < 0.
+
+2. Why did Fibonacci fail the testBaseCase test? What (if anything) did you have to do to fix
+it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed the testBaseCase because similar to my previous answer, 0 is a valid number in the Fibonacci sequence so the program should have returned 1 instead of throwing the IllegalArgumentException. When I fixed the first error, this error was also automatically fixed. 
+
+
+
+3.Why did Fibonacci fail the testInductiveCase test? What (if anything) did you have to do to
+fix it? If you did not have to change anything to fix this issue, explain why.
+
+Fibonacci failed the testInductiveCase because in the else if branch, n <= 2 should be changed to n < 2 because the only base cases should be 1 and 0 because 1 is the only repeated integer in the sequence. In the orignal code if n was 2, we would simply return 1 instead of going into the recursive call. There was another issue in the recursive call because the Fibonacci sequence is the sum of the 2 previous numbers. In the orignal code, we were calculating the difference, so I had to change the the return statemtn to calculate the sum rather than the difference. 
+
+

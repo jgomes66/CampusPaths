@@ -1,0 +1,4 @@
+Briefly list any changes you made to your graph class during hw-pathfinder,
+and why you made those changes.
+
+I made no other implementation changes to the graph other than generifying it.

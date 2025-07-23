@@ -1,0 +1,6 @@
+# Simple test to ensure that the lexicographically least
+# path is returned when there are multiple shortest paths
+
+LoadGraph g multipleShortestPaths.csv
+
+FindPath g A C

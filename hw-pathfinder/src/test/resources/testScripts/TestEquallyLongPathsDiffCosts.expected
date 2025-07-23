@@ -1,0 +1,20 @@
+# Simple test to ensure that the least costing
+# path is returned when there are multiple shortest paths
+
+created graph simpleGraph
+
+added node v1 to simpleGraph
+added node v2 to simpleGraph
+added node v3 to simpleGraph
+added node v4 to simpleGraph
+
+added edge 1.000 from v1 to v2 in simpleGraph
+added edge 1.000 from v2 to v4 in simpleGraph
+added edge 1.000 from v1 to v3 in simpleGraph
+added edge 2.000 from v3 to v4 in simpleGraph
+
+path from v1 to v4:
+v1 to v2 with weight 1.000
+v2 to v4 with weight 1.000
+total cost: 2.000
+

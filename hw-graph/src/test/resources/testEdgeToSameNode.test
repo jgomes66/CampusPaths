@@ -1,0 +1,14 @@
+# Test Edge to Same Node
+# Testing to see if node can have an edge to itself
+
+# Create a graph
+CreateGraph newGraph
+
+# Add a node
+AddNode newGraph node1
+
+# Add an edge to node and itself
+AddEdge newGraph node1 node1 e1
+
+# List children of node1
+ListChildren newGraph node1

@@ -1,0 +1,14 @@
+# Simple test to see what happens when there is no path
+# between 2 buildings
+
+created graph simpleGraph
+
+added node v1 to simpleGraph
+added node v2 to simpleGraph
+added node v3 to simpleGraph
+
+added edge 1.000 from v1 to v2 in simpleGraph
+
+path from v1 to v3:
+no path found
+

@@ -1,0 +1,9 @@
+# Simple test to see what happens when the buildings asked for
+# is not in the graph
+
+created graph simpleGraph
+
+added node v1 to simpleGraph
+
+unknown: v2
+unknown: v3

@@ -1,0 +1,13 @@
+# Test List Nodes
+# Testing to see if the graph can list all of its nodes
+
+# Create a graph
+created graph newGraph
+
+# Add nodes to graph
+added node node1 to newGraph
+added node node2 to newGraph
+added node node3 to newGraph
+
+# List all nodes in graph
+newGraph contains: node1 node2 node3

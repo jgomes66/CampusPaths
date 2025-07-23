@@ -1,0 +1,14 @@
+# Test Edge to Same Node
+# Testing to see if node can have an edge to itself
+
+# Create a graph
+create graph newGraph
+
+# Add a node
+added node node1 to newGraph
+
+# Add an edge to node and itself
+added edge e1 from node1 to node1 in newGraph
+
+# List children of node1
+The children of node1 in newGraph are: node1(e1)

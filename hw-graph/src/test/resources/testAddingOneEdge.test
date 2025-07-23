@@ -1,0 +1,16 @@
+# Test Adding One Edge Between Two Nodes
+# Testing to see if we can add an edge between two nodes
+
+# Create a graph
+CreateGraph newGraph
+
+# Add two nodes to our graph
+AddNode newGraph node1
+AddNode newGraph node2
+
+# Add edge connecting node1 and node2
+AddEdge newGraph node1 node2 e1
+
+# Print nodes in graph and outgoing edges of node1
+ListNodes newGraph
+ListChildren node1 from newGraph

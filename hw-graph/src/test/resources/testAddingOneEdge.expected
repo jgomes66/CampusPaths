@@ -1,0 +1,16 @@
+# Test Adding One Edge Between Two Nodes
+# Testing to see if we can add an edge between two nodes
+
+# Create a graph
+created graph newGraph
+
+# Add two nodes to our graph
+added node node1 to newGraph
+added node node2 to newGraph
+
+# Add edge connecting node1 and node2
+added edge e1 from node1 to node2 in newGraph
+
+# Print nodes in graph and outgoing edges of node1
+newGraph contains: node1 node2
+The children of node1 in newGraph are: node2(e1)

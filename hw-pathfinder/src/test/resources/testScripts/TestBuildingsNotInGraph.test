@@ -1,0 +1,8 @@
+# Simple test to see what happens when the buildings asked for
+# is not in the graph
+
+CreateGraph simpleGraph
+
+AddNode simpleGraph v1
+
+FindPath simpleGraph v2 v3

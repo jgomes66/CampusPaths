@@ -1,0 +1,21 @@
+# Simple test to see what happens when there is no path
+# between any of the existing characters
+
+loaded graph g
+
+the children of A in g are:
+the children of B in g are:
+the children of C in g are:
+
+path from A to B:
+no path found
+path from B to A:
+no path found
+path from B to C:
+no path found
+path from C to B:
+no path found
+path from C to A:
+no path found
+
+g contains: A B C

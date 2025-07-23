@@ -1,0 +1,12 @@
+# Test Adding Two Separate Nodes to Graph
+# Testing that more than one node can be added to graph
+
+# Create a graph
+CreateGraph newGraph
+
+# Add two nodes to graph
+AddNode newGraph firstNode
+AddNode newGraph secondNode
+
+# Check if graph contains both nodes
+ListNodes newGraph

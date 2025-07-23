@@ -1,0 +1,8 @@
+# Test Empty Graph Contents
+# Tests an empty graph has zero contents with listNodes method
+
+# Create a graph
+CreateGraph graph1
+
+# List all nodes in graph
+ListNodes graph1

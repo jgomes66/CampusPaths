@@ -1,0 +1,16 @@
+# Test Two Edges Between Same Nodes
+# Testing to see if we can add two edges with different labels to the same two nodes
+
+# Create a graph
+CreateGraph newGraph
+
+# Add two nodes to graph
+AddNode newGraph node1
+AddNode newGraph node2
+
+# Add two edges with node1 as parent and node2 as child for both
+AddEdge newGraph node1 node2 e1
+AddEdge newGraph node1 node2 e2
+
+# Print the outgoing edges from node1
+ListChildren node1 from newGraph

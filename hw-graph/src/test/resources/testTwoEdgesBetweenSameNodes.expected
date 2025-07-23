@@ -1,0 +1,16 @@
+# Test Two Edges Between Same Nodes
+# Testing to see if we can add two edges with different labels to the same two nodes
+
+# Create a graph
+created graph newGraph
+
+# Add two nodes to graph
+Added node node1 to newGraph
+Added node node2 to newGraph
+
+# Add two edges with node1 as parent and node2 as child for both
+Added edge e1 from node1 to node2 in newGraph
+Added edge e2 from node1 to node2 in newGraph
+
+# Print the outgoing edges from node1
+The children of node1 in newGraph are: node2(e1) node2(e2)

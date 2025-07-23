@@ -1,0 +1,11 @@
+# Simple test to see what happens when a character asked for
+# is not in the given data
+
+LoadGraph g oneSuperhero.csv
+
+ListNodes g
+
+ListChildren g A
+
+FindPath g A B
+FindPath g B C

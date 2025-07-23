@@ -1,0 +1,149 @@
+## CSE 331 hw-poly Questions
+## Part 0
+###########################################################################
+
+1. Multiplication Pseudocode
+r = p * q:
+    set r = 0
+    {inv: r = q * (p_0 + p_1 + ... + p_(i-1)), where p_j is the jth term in p}
+    foreach term, t_p, in p:
+        {inv: r = q(p_0 + p_1 + ... + p_(i-1)) + (q_0 * p_i + q_1 * p_i + ... + q_k * p_i), where q_k is the kth term in q}
+        foreach term, t_q, in p:
+            t_q * t_p = coefficients are multiplied together and degrees are added together to form one new term
+            if the degree of t_q * t_p is the same as a term found in r,
+                then replace t_r in r with the sum of t_q * t_p and t_r
+                else insert t_q * t_p into r as a new term
+
+2. Division Pseudocode
+answer = p / q:
+    set r = p
+    set answer = 0
+    {inv: p = q * answer + r}
+    while (leading term degree of r >= leading term degree of q and r != 0):
+        set newTerm = leading term of r divided by leading term of q
+        insert newTerm into answer
+        remove newTerm*q from r
+
+
+3. Division Example: (x3+x-1) / (x+1) = x2-x+2
+
+p = x^3 + x - 1
+q = x + 1
+r = x^3 + x - 1 (copy of p), answer = 0
+
+while (leading term degree of r > leading term degree of q and r != 0) {
+    iteration 1:
+        newTerm = x^3/x = x^2
+        answer += newTerm (answer = x^2)
+        r -= newTerm*q (r -= x^3 - x^2 -> r = -x^2 + x - 1)
+        we see x^2 >= x^1, so loop again
+    iteration 2:
+        newTerm = -x^2/x = -x
+        answer += newTerm (answer = x^2 - x)
+        r -= newTerm*q (r -= -x^2 - x -> r = 2x - 1)
+        we see x^1 >= x^1, so loop again
+    iteration 3:
+        newTerm = 2x/x = 2
+        answer += newTerm (answer = x^2 - x + 2)
+        r -= temp*q (r -= 2x - 2 -> r = 1)
+        x^0 is NOT greater than x^1, stop loop iteration
+}
+return answer
+
+
+## Part 1
+###########################################################################
+
+1. Weakened Rep Invariant
+
+The constructor RatNum(int n, int d) will change because we dont have to find the gcd and we
+no longer care whether or not the denomoniator is 0.
+
+Since we are not reducing in the constructor, we now need to do this in the methods add(),
+sub(), mul() and div(). This makes the program a bit more redundant and complex.
+
+The equals method also becomes a bit more complex because we need to make sure the denominator
+is not 0 and we need to call gcd() to reduce both fractions before we check in the else branch.
+
+In the toString() method, we now have to call gcd() and check before the else if branch and then
+continue on with the rest of the code. This makes the code a bit more complex.
+
+
+
+2. Alternate add, sub, mul, div
+
+The changes fail to meet the specification because it is supposed to be an unchangable rational
+number after the instance has been created. If we look at each of the methods, we can see this
+is true because there is no @spec.effects, meaning the methods should not be changing anything.
+
+3. Constructor checkReps
+
+Since RatNum cannot be changed once created, any method that attempts to change the value of
+RatNum will cause errors. Changes to RatNum are prevented by instead of changing the value of
+RatNum, we return a whole new RatNum. Having the check at the end of the function rather the
+beginning is sufficient because we only need to see if the rep invariant holds when the instance
+is first created. Also, we know that once it is created, the field cannot be changed.
+
+
+## Part 2
+###########################################################################
+
+1. Calls to checkRep in RatTerm
+
+The only time I called checkRep() was one time at the end of the constructor. Similar to my previous
+answer, we know that once RatNum is initialized, no method will change its value. Therefore, it
+is sufficient to just call checkRep() the one time at the end of the constructor.
+
+2. Weakened Rep Invariant
+
+In our constructor, since we no longer need to check if the coefficient is 0, our if statement
+is no longer needed which lessens complexity.
+
+getExpt() becomes more complex because now we need to check if the coeffecient is 0 to decide
+whether or not to return a 0.
+
+negate() also becomes more complex because we now have to check if the coefficient is 0 before
+we create and return new RatNum.
+
+add() and subtract() also become more complex because we need to see if the coefficients are 0
+or not because if they are, we need to also set the exponent to 0.
+
+mult() and div() also become more complex because like add() and subtract(), if the coefficients
+are 0, the exponent must also be set to 0.
+
+toString() increases in complexity because if the coefficient is 0, we will need to return a 0.
+
+equals() also increases in complexity because we need to check if both arguments coefficients are
+0 to deem them equal or not.
+
+3. Alternate Rep Invariant
+
+We would now have to add a check in our constructor to see if the coefficient is NaN, and if so we
+must set the exponent to 0.
+
+Similar to some answers before, we make the instance immutable so we don't have to change anything
+else in the code.
+
+
+4. Preferred Invariants
+
+
+
+
+## Part 3
+###########################################################################
+
+1. Calls to checkRep in RatPoly
+I put the call to checkRep() at the end of the constructor in RatPoly, because similar to
+the other classes, the instance cannot be changed throughout the code within the other methods.
+
+
+
+2. Alternate Representation
+
+I believe the main disadvatage is that it makes the code more complex because before we only
+had to keep track of one list of RatTerms where no we will have to keep track of two and properly
+update it. Also, with one list we are able to reuse previously implemented features, where in two
+we would have to reprogram them again. Overall, I believe having one list is better for the
+complexity of the code.
+

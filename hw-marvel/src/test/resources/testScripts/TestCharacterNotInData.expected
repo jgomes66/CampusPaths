@@ -1,0 +1,12 @@
+# Simple test to see what happens when a character asked for
+# is not in the given data
+
+loaded graph g
+
+g contains: A
+
+the children of A in g are:
+
+unknown: B
+unknown: B
+unknown: C

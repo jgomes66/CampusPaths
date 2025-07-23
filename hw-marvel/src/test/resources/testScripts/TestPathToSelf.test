@@ -1,0 +1,15 @@
+# Simple test to see what happens when there is a path
+# back to the starting character through others
+
+LoadGraph g superheroWithPathToSelf.csv
+
+FindPath g A B
+FindPath g B C
+FindPath g C A
+
+ListNodes g
+
+ListChildren g A
+ListChildren g B
+ListChildren g C
+

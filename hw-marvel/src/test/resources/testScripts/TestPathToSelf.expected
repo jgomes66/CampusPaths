@@ -1,0 +1,17 @@
+# Simple test to see what happens when there is a path
+# back to the starting character through others
+
+loaded graph g
+
+path from A to B:
+A to B via BookA
+path from B to C:
+B to C via BookA
+path from C to A:
+C to A via BookA
+
+g contains: A B C
+
+the children of A in g are: B(BookA) C(BookA)
+the children of B in g are: A(BookA) C(BookA) C(BookB)
+the children of C in g are: A(BookA) B(BookA) B(BookB)

@@ -1,0 +1,48 @@
+## CSE 331 hw-graph Part 1 Questions
+
+## Part 1
+###########################################################################
+
+Briefly explain why you included the operations you did and why you feel they are a sufficient
+interface to a graph. If your design includes multiple classes or interfaces, explain why you
+included each one; if not, explain whether you considered additional classes and why you decided
+not to include them.
+
+The Graph ADT can add nodes to itself. We have a public Node object for this, which we create
+instances of and add them to the graph to represent adding nodes. Nodes can also add edges between
+itself and other nodes, which allows us to add edges in the graphs. For the Graph itself,
+we can also add edges through it and also list all its nodes and children of specified nodes
+in string form. Each of these is a method of its own, which can be called from the Graph
+itself. This satisfies the outlined operations in the specification and allows us to
+create a functional and directed graph with labeled edges. The client can access the
+Graph's data and alter its contents through the operations I provided in the Graph and Node
+classes.
+
+
+
+
+## Part 2
+###########################################################################
+
+What was your testing strategy for this assignment? How do your script tests and JUnit tests
+differ from each other (if they do), and why?
+
+My strategy was to use the script tests and JUnit tests a little differently because they
+each could serve a unique purpose. The script tests I made test to see if my Graph data
+structure can actually represent different unique Graph cases. Some of these cases include
+a graph with one node, a graph with multiple nodes, a graph with one edge connecting two nodes,
+a graph with a node connected to itself by an edge to itself, a graph with two edges with the
+same parent and child nodes but different labels, and others.
+
+For the JUnit tests, I used them to see if all of my methods for the Graph and Node
+classes actually functioned as per the specifications I had given it. I used
+the tests to verify the behavior of my methods.
+
+The difference between the script and JUnit tests is that the script tests are used
+to see if my Graph data structure can actually represent all the different unique
+features of a directed graph, while the JUnit tests are to see if each method in
+the classes including constructors functioned as per the specifications that
+I had outlined.
+
+
+

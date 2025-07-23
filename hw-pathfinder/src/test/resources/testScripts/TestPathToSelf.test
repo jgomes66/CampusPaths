@@ -1,0 +1,9 @@
+# Simple test to see what happens when find path
+# is used and the same building is both the start and end
+
+CreateGraph simpleGraph
+
+AddNode simpleGraph v1
+
+FindPath simpleGraph v1 v1
+

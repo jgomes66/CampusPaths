@@ -1,0 +1,19 @@
+# Test ListChildren
+# Testing to see if listChildren can list the children of given node
+
+# Create a graph
+CreateGraph newGraph
+
+# Add all parent and child nodes
+AddNode newGraph parent
+AddNode newGraph child1
+AddNode newGraph child2
+AddNode newGraph child3
+
+# Add edges between parent and all child nodes
+AddEdge newGraph parent child1 e1
+AddEdge newGraph parent child2 e2
+AddEdge newGraph parent child3 e3
+
+# List the children of the parent node
+ListChildren newGraph parent

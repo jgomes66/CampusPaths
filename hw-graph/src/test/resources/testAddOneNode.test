@@ -1,0 +1,11 @@
+# Test Adding Just One Node
+# Testing to see if one node can be added to a newly created graph
+
+# Create a graph
+CreateGraph newGraph
+
+# Add one node to graph
+AddNode newGraph firstNode
+
+# Check if graph contains node
+ListNodes newGraph

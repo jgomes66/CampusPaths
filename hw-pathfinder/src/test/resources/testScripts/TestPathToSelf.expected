@@ -1,0 +1,9 @@
+# Simple test to see what happens when find path
+# is used and the same building is both the start and end
+
+created graph simpleGraph
+
+added node v1 to simpleGraph
+
+path from v1 to v1:
+total cost: 0.000

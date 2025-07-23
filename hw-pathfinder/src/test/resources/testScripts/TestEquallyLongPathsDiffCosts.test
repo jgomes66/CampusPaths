@@ -1,0 +1,16 @@
+# Simple test to ensure that the least costing
+# path is returned when there are multiple shortest paths
+
+CreateGraph simpleGraph
+
+AddNode simpleGraph v1
+AddNode simpleGraph v2
+AddNode simpleGraph v3
+AddNode simpleGraph v4
+
+AddEdge simpleGraph v1 v2 1
+AddEdge simpleGraph v2 v4 1
+AddEdge simpleGraph v1 v3 1
+AddEdge simpleGraph v3 v4 2
+
+FindPath simpleGraph v1 v4

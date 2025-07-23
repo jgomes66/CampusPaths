@@ -1,0 +1,65 @@
+## CSE 331 hw-graph Part 2 Questions
+
+NOTE: This file is used as part of hw-graph-part2, and is not due as part of the hw-graph-part1
+submission. You may leave it blank for hw-graph-part1.
+
+## Part 1
+###########################################################################
+
+A few examples of possible Graph representations:
+
+    A: A collection of nodes and a collection of edges.
+    B: An adjacency list, in which each node is associated with a list of its outgoing edges.
+    C: An adjacency matrix, which explicitly represents, for every pair ⟨A,B⟩ of nodes, whether there 
+       is a link from A to B, and how many.
+
+1. In two or three sentences, explain an advantage and a disadvantage of each of the
+representations listed above (for example, in terms of runtime complexity, space
+complexity, or ease of implementation).
+
+Adding edges for representation A is constant time, as we just add to a collection.
+However, it can be more difficult to represent isolated nodes in this rep
+
+Space complexity for representation B is linear, with O(n + m), where n is the number
+of nodes and m is the number of edges
+The disadvantage is that finding edges is O(n) as well
+
+The advantage is for representation C is that you can find if there is a link for two
+nodes in constant time
+The disadvantage is that storing the graph is now O(n^2) time complexity
+
+
+2. In two to three sentences, describe the representation you chose and explain why you
+chose it. If you chose to use a different representation than one of the three we described
+above, be sure to list its advantages and disadvantages, too.
+
+I chose the adjacency list representation, logically because it makes the most sense to
+me when I visualize directed graphs, so I felt it would be the most smooth to implement.
+Additionally, it is easy from an implementation stand-point to add edges and traverse
+through the graph using this representation.
+
+
+## Part 4
+###########################################################################
+
+    (Please keep your answers brief and to-the-point.)
+
+1. Describe any new tests you added and why you added them, or why you feel that your original
+tests alone are sufficient.
+
+I added tests for my new getNode() method in Graph, I wanted to make sure that when the
+label matches a node's label inside the graph, it will return that node. And when
+the label does not exist within the graph, then returns null
+
+
+2. Did you make any changes to your specifications as you were implementing your Graph? (yes/no)
+If yes, describe your changes and why you made them.
+
+Yes, I removed the hashCode and equals methods from my Graph class after feedback from my TA.
+I added a new nested class inside of my Node class to represent edges as I am using the
+adjacency list representation. I added a getLabel() method to Node for use in Graph class.
+I added getNode() to my Graph so that a client can get the node associated
+with the label that they search for. I also added getNodes() to get a list of all the Strings
+of node labels associated with the given graph. I added some more getters to my Node class
+as well mostly for my own testing purposes, so that I can see if the children and edges were
+added properly during my script testing
